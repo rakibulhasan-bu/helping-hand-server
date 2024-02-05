@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { reviewService } from "./review.services";
 import { CatchAsyncError } from "../../utils/CatchAsyncError";
-import { courseServices } from "../course/course.service";
+import { courseServices } from "../event/event.service";
 import AppError from "../../error/AppError";
 
 const createReview = CatchAsyncError(async (req: Request, res: Response) => {
