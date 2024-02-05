@@ -6,7 +6,21 @@ const createEventIntoDB = async (event: TEvent) => {
 };
 
 const getAllEventFromDB = async () => {
-  return await Event.find();
+  return await Event.aggregate([
+    {
+      $group: {
+        _id: "$category",
+        events: { $push: "$$ROOT" },
+      },
+    },
+    {
+      $project: {
+        _id: 0,
+        category: "$_id",
+        events: 1,
+      },
+    },
+  ]);
 };
 
 const getSingleEventById = async (eventId: string) => {
