@@ -8,6 +8,11 @@ const createEventIntoDB = async (event: TEvent) => {
 const getAllEventFromDB = async () => {
   return await Event.find();
 };
+
+const getSingleEventById = async (eventId: string) => {
+  return await Event.findById(eventId);
+};
+
 // const getAllCourse = async (query: Record<string, unknown>) => {
 //   const {
 //     page = 1,
@@ -76,13 +81,6 @@ const getAllEventFromDB = async () => {
 //   };
 // };
 
-// const getSingleCourseById = async (courseId: string) => {
-//   return await Course.findById(courseId).populate({
-//     path: "createdBy",
-//     select: "_id username email role",
-//   });
-// };
-
 // const updateCourse = async (id: string, payload: Partial<TCourse>) => {
 //   const { tags, details, ...remainingData } = payload;
 //   const modifiedData: Record<string, unknown> = { ...remainingData };
@@ -109,5 +107,6 @@ const getAllEventFromDB = async () => {
 
 export const eventServices = {
   createEventIntoDB,
+  getSingleEventById,
   getAllEventFromDB,
 };

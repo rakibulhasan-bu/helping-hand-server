@@ -27,6 +27,18 @@ const getAllEvent = CatchAsyncError(async (req: Request, res: Response) => {
   });
 });
 
+const getSingleEvent = CatchAsyncError(async (req: Request, res: Response) => {
+  const { eventId } = req.params;
+  const result = await eventServices.getSingleEventById(eventId);
+
+  res.status(201).json({
+    success: true,
+    statusCode: 201,
+    message: "Event are retrieved successfully!",
+    data: result,
+  });
+});
+
 // const getCourseByIdWithReviews = CatchAsyncError(
 //   async (req: Request, res: Response) => {
 //     const { courseId } = req.params;
@@ -82,4 +94,5 @@ const getAllEvent = CatchAsyncError(async (req: Request, res: Response) => {
 export const eventControllers = {
   createEvent,
   getAllEvent,
+  getSingleEvent,
 };
