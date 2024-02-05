@@ -1,5 +1,4 @@
 import { Router } from "express";
-import reviewRouter from "../modules/review/review.router";
 import eventRouter from "../modules/event/event.router";
 import categoryRoute from "../modules/category/category.route";
 import userRoute from "../modules/user/user.route";
@@ -9,10 +8,6 @@ import carouselRoute from "../modules/carousel/carousel.route";
 const router = Router();
 
 const moduleRoutes = [
-  {
-    path: "/",
-    route: reviewRouter,
-  },
   {
     path: "/",
     route: eventRouter,
