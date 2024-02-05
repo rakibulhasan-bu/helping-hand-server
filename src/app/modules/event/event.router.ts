@@ -14,7 +14,7 @@ eventRouter.post(
   eventControllers.createEvent,
 );
 
-// courseRouter.get("/courses", courseControllers.getAllCourse);
+eventRouter.get("/events", eventControllers.getAllEvent);
 
 // courseRouter.get(
 //   "/courses/:courseId/reviews",

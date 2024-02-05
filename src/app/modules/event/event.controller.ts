@@ -6,7 +6,7 @@ import { eventServices } from "./event.service";
 
 const createEvent = CatchAsyncError(async (req: Request, res: Response) => {
   const event = req.body;
-  const result = await eventServices.createEvent(event);
+  const result = await eventServices.createEventIntoDB(event);
 
   res.status(201).json({
     success: true,
@@ -16,16 +16,16 @@ const createEvent = CatchAsyncError(async (req: Request, res: Response) => {
   });
 });
 
-// const getAllCourse = CatchAsyncError(async (req: Request, res: Response) => {
-//   const result = await courseServices.getAllCourse(req.query);
-//   res.status(201).json({
-//     success: true,
-//     statusCode: 201,
-//     message: "Courses retrieved successfully",
-//     meta: result.meta,
-//     data: result.data,
-//   });
-// });
+const getAllEvent = CatchAsyncError(async (req: Request, res: Response) => {
+  const result = await eventServices.getAllEventFromDB();
+
+  res.status(201).json({
+    success: true,
+    statusCode: 201,
+    message: "Events retrieved successfully!",
+    data: result,
+  });
+});
 
 // const getCourseByIdWithReviews = CatchAsyncError(
 //   async (req: Request, res: Response) => {
@@ -81,4 +81,5 @@ const createEvent = CatchAsyncError(async (req: Request, res: Response) => {
 
 export const eventControllers = {
   createEvent,
+  getAllEvent,
 };

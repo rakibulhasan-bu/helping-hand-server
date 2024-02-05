@@ -1,10 +1,13 @@
 import Event from "./event.model";
 import { TEvent } from "./event.interface";
 
-const createEvent = async (event: TEvent) => {
+const createEventIntoDB = async (event: TEvent) => {
   return await Event.create(event);
 };
 
+const getAllEventFromDB = async () => {
+  return await Event.find();
+};
 // const getAllCourse = async (query: Record<string, unknown>) => {
 //   const {
 //     page = 1,
@@ -105,5 +108,6 @@ const createEvent = async (event: TEvent) => {
 // };
 
 export const eventServices = {
-  createEvent,
+  createEventIntoDB,
+  getAllEventFromDB,
 };
