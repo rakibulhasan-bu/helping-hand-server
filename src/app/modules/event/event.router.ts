@@ -16,6 +16,8 @@ eventRouter.post(
 
 eventRouter.get("/events", eventControllers.getAllEvent);
 
+eventRouter.get("/category-events", eventControllers.getAllEventByCategory);
+
 eventRouter.get("/events/:eventId", eventControllers.getSingleEvent);
 
 // courseRouter.get("/course/best", courseControllers.getBestCourse);

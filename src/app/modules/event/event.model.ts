@@ -18,10 +18,12 @@ const EventSchema = new Schema<TEvent>(
     category: {
       type: String,
       required: true,
+      enum: ["চিকিৎসা", "শিক্ষা", "প্রজেক্ট"],
     },
     status: {
       type: String,
       required: true,
+      enum: ["running", "end"],
     },
   },
   { timestamps: true },

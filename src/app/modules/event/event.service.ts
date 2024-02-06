@@ -5,7 +5,7 @@ const createEventIntoDB = async (event: TEvent) => {
   return await Event.create(event);
 };
 
-const getAllEventFromDB = async () => {
+const getAllEventByCategoryFromDB = async () => {
   return await Event.aggregate([
     {
       $group: {
@@ -25,6 +25,10 @@ const getAllEventFromDB = async () => {
 
 const getSingleEventById = async (eventId: string) => {
   return await Event.findById(eventId);
+};
+
+const getAllEventFromDB = async () => {
+  return await Event.find();
 };
 
 // const getAllCourse = async (query: Record<string, unknown>) => {
@@ -123,4 +127,5 @@ export const eventServices = {
   createEventIntoDB,
   getSingleEventById,
   getAllEventFromDB,
+  getAllEventByCategoryFromDB,
 };
