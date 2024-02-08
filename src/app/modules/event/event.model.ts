@@ -29,6 +29,6 @@ const EventSchema = new Schema<TEvent>(
   { timestamps: true },
 );
 
-const Event = model("Case", EventSchema);
+const Event = model("Event", EventSchema);
 
 export default Event;
