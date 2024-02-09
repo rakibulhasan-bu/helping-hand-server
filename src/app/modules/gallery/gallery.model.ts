@@ -10,7 +10,14 @@ const GallerySchema = new Schema<TGallery>(
     category: {
       type: String,
       required: true,
-      enum: ["চিকিৎসা", "শিক্ষা", "প্রজেক্ট"],
+      enum: [
+        "চিকিৎসা",
+        "শিক্ষা",
+        "উষ্ণতার ছোয়া",
+        "রামাদ্বান ফুড বাকেট",
+        "স্বাবলম্বিতা",
+        "অন্যান্য",
+      ],
     },
   },
   { timestamps: true },
