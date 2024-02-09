@@ -2,7 +2,7 @@ export interface TGallery {
   imageUrl: string;
   category:
     | "চিকিৎসা"
-    | "শিক্ষা"
+    | "শিক্ষা সহায়তা"
     | "উষ্ণতার ছোয়া"
     | "রামাদ্বান ফুড বাকেট"
     | "স্বাবলম্বিতা"
